@@ -31,10 +31,10 @@ end
 
 bot = Cinch::Bot.new do
   configure do |c|
-    c.nick = config['nick'] || 'viby'
+    c.nick = config['nick'] || 'Bot'
     c.server = config['server'] || 'localhost'
     c.port = config['port'] || '6667'
-    c.channels = config['channels'] || ['#viby']
+    c.channels = config['channels'] || ['#Boulet']
     c.password = config['password']
     c.ssl = Cinch::Configuration::SSL.new use: true if config['ssl']
     for name, cplugin in config['plugin'] || []
