@@ -2,6 +2,8 @@
 require 'bundler/setup'
 require 'cinch'
 require 'yaml'
+require 'pp'
+require 'uri'
 
 ROOT = File.dirname(__FILE__)
 
@@ -36,7 +38,7 @@ bot = Cinch::Bot.new do
     c.port = config['port'] || '6667'
     c.channels = config['channels'] || ['#Boulet']
     c.password = config['password']
-    c.ssl = Cinch::Configuration::SSL.new use: true if config['ssl']
+#    c.ssl = Cinch::Configuration::SSL.new use: true if config['ssl']
     for name, cplugin in config['plugin'] || []
       c.plugins.options[Kernel.const_get name] = cplugin
     end
